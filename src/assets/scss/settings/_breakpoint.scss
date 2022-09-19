@@ -1,0 +1,26 @@
+@use "sass:map";
+
+$breakpoints: (
+  sm: 420px,
+  md: 560px,
+  2md: 720px,
+  lg: 980px,
+  2lg: 1100px,
+  xl: 1366px,
+) !default;
+
+@mixin mq($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{inspect(map.get($breakpoints, $breakpoint))}) {
+      @content;
+    }
+    // @media screen and #{inspect(map.get($breakpoints, $breakpoint))} {
+    //   @content;
+    // }
+  }
+
+  // マップ型で定義されていない値が呼び出された時はエラーを返す
+  @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map.keys($breakpoints)}";
+  }
+}

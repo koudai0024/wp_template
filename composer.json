@@ -1,0 +1,18 @@
+{
+    "name": "iwaikoudai/wp_template",
+    "autoload": {
+        "psr-4": {
+            "Iwaikoudai\\WpTemplate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "koudai0024",
+            "email": "57711406+koudai0024@users.noreply.github.com"
+        }
+    ],
+    "require-dev": {
+        "paulthewalton/acf-stubs": "^5.8",
+        "friendsofphp/php-cs-fixer": "^3.11"
+    }
+}

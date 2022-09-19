@@ -1,0 +1,7 @@
+$env: "development" !default;
+
+$theme-path: "http://localhost:8000/wp-content/themes/theme1" !default;
+
+@if $env == "production" {
+  $theme-path: "http://localhost:8000/wp-content/themes/theme1";
+}
